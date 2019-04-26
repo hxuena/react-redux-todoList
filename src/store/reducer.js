@@ -18,7 +18,7 @@ export default (state = defaultState, action) => {
     newState.list.splice(action.index, 1)
   }
   if( action.type === INIT_LIST) {
-    newState.list = [...action.data]
+    newState.list = action.data
   }
   return newState;
 }
