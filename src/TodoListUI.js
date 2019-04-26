@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import {Input, Button, List} from 'antd';
 
 class TodoListUI extends Component {
@@ -7,7 +7,8 @@ class TodoListUI extends Component {
       <div style={{margin: '10px'}}>
         <Input placeholder="Basic usage" 
           style={{width: '300px', marginRight:'10px'}}
-          value={this.props.inputValue}/>
+          value={this.props.inputValue}
+          onChange={this.props.InputChange}/>
         <Button type="primary" onClick={this.props.addItem}>提交</Button>
         <List
           style={{marginTop: '10px', width: '300px'}}

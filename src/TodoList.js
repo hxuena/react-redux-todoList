@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-// import TodoListUI from './TodoListUI'
-import {Input, Button, List} from 'antd';
+import TodoListUI from './TodoListUI'
 import store from './store'
 import {getInputChangeAction, getAddItemAction, getDeleteItemAction} from './store/actionCreators'
 
@@ -17,20 +16,13 @@ class TodoList extends Component {
   }
   render() {
     return (
-      <div style={{ margin: '10px' }}>
-        <Input placeholder="Basic usage"
-          style={{ width: '300px', marginRight: '10px' }}
-          value={this.state.inputValue}
-          onChange={this.InputChange} />
-        <Button type="primary" onClick={this.addItem}>提交</Button>
-        <List
-          style={{ marginTop: '10px', width: '300px' }}
-          size="small"
-          bordered
-          dataSource={this.state.list}
-          renderItem={(item, index) => (<List.Item onClick={(index) => { this.deleteItem(index) }} > {item}</List.Item>)}
-        />
-      </div>
+      <TodoListUI
+        inputValue={this.state.inputValue}
+        list={this.state.list}
+        InputChange={this.InputChange}
+        addItem={this.addItem}
+        deleteItem={this.deleteItem}
+      ></TodoListUI>
     )
   }
   InputChange(e) {
