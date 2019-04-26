@@ -5,12 +5,9 @@ import store from "./store";
 
 import TodoList from "./TodoList";
 
-import "antd/dist/antd.css";
-
 const App = (
   <Provider store={store}>
     <TodoList />
   </Provider>
 );
-
 ReactDOM.render(App, document.getElementById("root"));
